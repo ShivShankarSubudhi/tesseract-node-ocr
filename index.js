@@ -38,7 +38,7 @@ var runTesseract = function(image, cb) {
             reject(err);
         } else {
             var fileName = path.basename(image);
-            var outputFile = outputDir + "/" + fileName.substr(0, fileName.indexOf('.'));
+            var outputFile = outputDir + "/" + fileName.substr(0, fileName.indexOf('.')) + ".txt";
             fs.writeFileSync(outputFile, text, 'utf8');
             cb(null, outputFile);
         }
